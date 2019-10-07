@@ -147,7 +147,7 @@ int main(){
 	int x = Remover_um_elemento_da_pilha(pi);
 	printf("Cpf Removido: %d\n", x);
 	Imprimir_pilha(pi);
-	printf ("\n\n\n\nrenegay\n\n\n\n");
+	printf ("\n\n\n\nrenegay\n\n\n");
 }
 
 
