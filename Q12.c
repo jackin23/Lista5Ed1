@@ -13,12 +13,12 @@ struct newNode{
 	struct cliente dados;
 	struct newNode *prox;
 };
-typedef struct newNode* Pilha;		//Apelido da cabeça.
-typedef struct  newNode Elem;		//Apelido a um nó qualquer ou de uma "cabeça auxiliar".
+typedef struct newNode* Pilha;		//Apelido da cabeÃ§a.
+typedef struct  newNode Elem;		//Apelido a um nÃ³ qualquer ou de uma "cabeÃ§a auxiliar".
 
 
 
-		// Métodos Auxiliares
+		// MÃ©todos Auxiliares
 //Nos informa o tamanho da pilha
 int tamanho_pilha(Pilha* pi){
 	if(pi == NULL){
@@ -26,19 +26,19 @@ int tamanho_pilha(Pilha* pi){
 	}
 	int cont = 0;
 	Elem* no = *pi;
-	while (no != NULL){							//A cada vez que minha pilha auxiliar se move pelos nós eu incremento o contador. Paro quando chegar no final.
+	while (no != NULL){							//A cada vez que minha pilha auxiliar se move pelos nÃ³s eu incremento o contador. Paro quando chegar no final.
 		cont ++;
 		no = no->prox;
 	}
 	return cont;
 }
 
-//Verifica se a pilha está vazia.
+//Verifica se a pilha estÃ¡ vazia.
 int pilha_vazia(Pilha* pi){
-	if(pi == NULL){								//Se a pilha está vazia
+	if(pi == NULL){								//Se a pilha estÃ¡ vazia
 		return 1;
 	}
-	if(*pi = NULL){								//Se a cabeça aponta para o vazio.
+	if(*pi = NULL){								//Se a cabeÃ§a aponta para o vazio.
 		return 1;
 	}
 	return 0;
@@ -64,31 +64,31 @@ void Imprimir_pilha(Pilha* pi){
 
 
 
-		//Métdos dos exercícios,
-//Cria uma pilha apenas com a cabeça.
+		//MÃ©tdos dos exercÃ­cios,
+//Cria uma pilha apenas com a cabeÃ§a.
 Pilha*	Criar_pilha_vazia(){
-	Pilha *pi = (Pilha*) malloc(sizeof(Pilha));				//Aloca memória para a cabeça.
+	Pilha *pi = (Pilha*) malloc(sizeof(Pilha));				//Aloca memÃ³ria para a cabeÃ§a.
 	if(pi != NULL)
 		*pi = NULL;
 	return pi;
 }
 
-//Insere um elemento no início da pilha. (como é por sua definição Lifo > last in, first out).
+//Insere um elemento no inÃ­cio da pilha. (como Ã© por sua definiÃ§Ã£o Lifo > last in, first out).
 int Inserir_um_elemento_em_qualquer_na_pilha(Pilha* pi, struct cliente c){
 	if(pi == NULL){
 		return 0;
 	}
-	Elem* no = (Elem*) malloc(sizeof(Elem));				//Aloca espaço de memória para a nova célula
+	Elem* no = (Elem*) malloc(sizeof(Elem));				//Aloca espaÃ§o de memÃ³ria para a nova cÃ©lula
 	if(no == NULL){
 		return 0;
 	}
 	no->dados = c;
-	no->prox = (*pi);										//Imagine os elementos empilhados, o mais debaixo é o último.
+	no->prox = (*pi);										//Imagine os elementos empilhados, o mais debaixo Ã© o Ãºltimo.
 	*pi = no;
 
 }
 
-//Remove um elemento no início da pilha (como é por sua definição Lifo > last in, first out).
+//Remove um elemento no inÃ­cio da pilha (como Ã© por sua definiÃ§Ã£o Lifo > last in, first out).
 int Remover_um_elemento_da_pilha(Pilha* pi){
 	if(pi == NULL){
 		return 0;
@@ -98,16 +98,16 @@ int Remover_um_elemento_da_pilha(Pilha* pi){
 	}
 	Elem *no = *pi;
 	int cpfRemovido = no->dados.cpf;
-	*pi = no->prox;											//Faz a cabeça apontar pro próximo, que será o novo início.
-	free(no);												//Libera o ex-início
+	*pi = no->prox;											//Faz a cabeÃ§a apontar pro prÃ³ximo, que serÃ¡ o novo inÃ­cio.
+	free(no);												//Libera o ex-inÃ­cio
 	return cpfRemovido;
 }
 
-//Deleta um a um os nós da lista
+//Deleta um a um os nÃ³s da lista
 // Fabio viana.
 void Deletar_pilha(Pilha*pi){
-	if(pi != NULL){											//Se ela não ta vazia
-		Elem* no;											//Criando a nossa cabeça auxiliar
+	if(pi != NULL){											//Se ela nÃ£o ta vazia
+		Elem* no;											//Criando a nossa cabeÃ§a auxiliar
 		while((*pi) != NULL){								//Enquanto ainda haver elementos na pilha
 			no = *pi;
 			*pi = (*pi) ->prox;
@@ -147,6 +147,7 @@ int main(){
 	int x = Remover_um_elemento_da_pilha(pi);
 	printf("Cpf Removido: %d\n", x);
 	Imprimir_pilha(pi);
+	printf ("\n\n\n\nrenegay\n\n\n\n");
 }
 
 
